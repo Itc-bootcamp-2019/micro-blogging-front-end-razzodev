@@ -1,20 +1,24 @@
-import React, { useState , useEffect } from 'react';
+import React, {  } from 'react';
 import Tweet from "./Tweet";
 
 
 
 function AllTweets(props) {
-    const { newTweet } = props;
+    const { list } = props;
     
-    const [ tweets , setTweets ] = useState([]);
-    useEffect(() => {
-        setTweets([newTweet, ...tweets ])
-    },[newTweet,tweets]);
+    // const [ tweets , setNotTweets ] = useState([]);
+    // useEffect(() => {
+    //     setNotTweets([newTweet, ...tweets ])
+    // },[newTweet,tweets]);
 
     return (
         <div /*style={{marginTop: '20px'}}*/>
-            {tweets.map(tweet => 
-                <Tweet username={tweet.username} timeCreated={tweet.timeCreated} content={tweet.content} />
+            Hello
+            {list.map((tweet, index) => 
+                <Tweet key={tweet.timeCreated}
+                 username={tweet.username}
+                  timeCreated={tweet.timeCreated}
+                   content={tweet.content} />
                 )}
         </div>
     )
