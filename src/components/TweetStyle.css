@@ -1,0 +1,42 @@
+#tweetCont {
+    position: relative;
+    width: 600px;
+    height: fit-content;
+    padding:20px;
+    margin-top: 15px;
+    background: #343A40;
+    border-radius: 6px;
+  }
+  
+  #tweetTime {
+    float: right;
+  }
+  #tweetUsername {
+    float: left;
+  }
+  
+  #tweetTime,#tweetUsername {
+    display: inline-block;
+    margin:0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    /* display: flex; */
+    align-items: center;
+    color: #6C757D;
+  }
+  
+  #tweetContent {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-top:25px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+    text-align: start;
+  }
