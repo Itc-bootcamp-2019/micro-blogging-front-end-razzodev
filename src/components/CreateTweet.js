@@ -17,7 +17,7 @@ function CreateTweet(props) {
 
     return (
         <div className='create-tweet-wrapper'>
-            <input id='tweetInput' type='textarea'
+            <textarea id='tweetInput'
                 placeholder='What you have in mind...'
                 onChange={(e) => tweetInput(e)} />
             <div> 
