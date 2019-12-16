@@ -1,5 +1,5 @@
 .create-tweet-wrapper {
-    position: absolute;
+    position: relative;
     top: 10px;
     width: 600px;
     height: 180px;
@@ -19,10 +19,10 @@
     width: 100%;
     height: 100px;
     color: #CCCCCC;
-    overflow-wrap: normal;
     font-size: 16px;
     font-weight: normal;
     font-family: 'Roboto', sans-serif;
+    resize: none;
   }
   
   #tweetButton {
@@ -37,6 +37,10 @@
     font-size: 16px;
     line-height: 19px;
     font-family: 'Roboto', sans-serif;
+  }
+
+  #tweetButton:disabled {
+    opacity: 0.5;
   }
   
   #maxCharWarning {
