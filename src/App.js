@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import CreateTweet from './components/CreateTweet';
 import Tweet from './components/Tweet';
+import AllTweets from './components/AllTweets';
 
 function App() {
+  
   return (
     <div className="App">
       <CreateTweet  />
-      <Tweet username={'raz'}
-      timeCreated={new Date().toISOString()}
-      content={'foobar!'}/>
+      {/* <AllTweets /> */}
+      <Tweet username='bob' timeCreated='just now' 
+      content='Nisi dolore ad ex magna nostrud voluptate enim nulla magna.' />
     </div>
   );
 }
