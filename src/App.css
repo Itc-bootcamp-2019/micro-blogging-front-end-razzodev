@@ -5,8 +5,9 @@ div {
 .App {
   display: flex;
   text-align: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
   width: 100vw;
   height:100vh;
   background-color: #15202B;
