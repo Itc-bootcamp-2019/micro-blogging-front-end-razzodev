@@ -1,0 +1,59 @@
+.create-tweet-wrapper {
+    position: absolute;
+    top: 10px;
+    width: 600px;
+    height: 180px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 6px;
+  }
+  
+  #tweetInput {
+    background-color: rgba(0, 0, 0, 0);
+    border:0;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 100px;
+    color: #CCCCCC;
+    overflow-wrap: normal;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  #tweetButton {
+    float: right;
+    width: 68px;
+    height: 34px;
+    /* margin: 5px 10px 20px 20px; */
+    background: #007BFF;
+    border: 0;;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 19px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  #maxCharWarning {
+    float: left;
+    width: 340px;
+    height: 30px;
+    background: #F8D7DA;
+    border: 1px solid #F5C6CB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #721C24;
+  }
