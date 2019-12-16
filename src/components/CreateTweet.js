@@ -10,7 +10,7 @@ function CreateTweet(props) {
     }
     const [ isValid , setIsValid ] = useState(false);
     const checkValid = () => {
-        (tweetContent.length > 0 && !maxChar) ? setIsValid(true) : setIsValid(false);
+        return (tweetContent.length > 0 && !maxChar) ? setIsValid(true) : setIsValid(false);
     };
     
     const [tweetContent, setTweetContent] = useState('');
@@ -21,14 +21,13 @@ function CreateTweet(props) {
     }
     
     const [ currentTweet, setCurrentTweet] = useState({});
-
     const submitTweet = () => {
-        setCurrentTweet({
+        return setCurrentTweet({
             username:'raz',
             timeCreated: new Date().toISOString(),
             content: tweetContent,
         });
-        console.log(currentTweet); // FIRST CLICK RETURNS EMPTY OBJECT --ASYNC(?)
+        // console.log(currentTweet); // FIRST CLICK RETURNS EMPTY OBJECT --ASYNC(?)
     }
 
     return (
