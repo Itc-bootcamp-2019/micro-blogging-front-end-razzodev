@@ -5,8 +5,8 @@ import Tweet from "./Tweet";
 
 function AllTweets(props) {
     const { newTweet } = props;
+    
     const [ tweets , setTweets ] = useState([]);
-
     useEffect(() => {
         setTweets([newTweet, ...tweets ])
     },[newTweet,tweets]);

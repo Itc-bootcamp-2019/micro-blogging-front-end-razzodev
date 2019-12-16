@@ -6,10 +6,11 @@ import AllTweets from './components/AllTweets';
 
 function App() {
   
+
   return (
     <div className="App">
       <CreateTweet  />
-      {/* <AllTweets /> */}
+      {/* <AllTweets newTweet ={} /> */}
       <Tweet username='bob' timeCreated='just now' 
       content='Nisi dolore ad ex magna nostrud voluptate enim nulla magna.' />
     </div>
