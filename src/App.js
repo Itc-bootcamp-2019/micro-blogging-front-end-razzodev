@@ -24,26 +24,18 @@ function App(props) {
   
   const [ tweets , setTweets ] = useState([]);
 
-  const [ currentTweet, setCurrentTweet] = useState({ name: 'raz', timeCreated:'', content:'',});
   const submitTweet = () => {
-       setCurrentTweet({
-          username:'raz',
-          timeCreated: new Date().toISOString(),
-          content: tweetContent,
-      });
-      setTweets([ currentTweet , ...tweets]);
-      console.log(currentTweet); // FIRST CLICK RETURNS EMPTY OBJECT --ASYNC(?)
+      let newTweet = {
+        content: tweetContent,
+        userName: 'raz',
+        date: new Date().toISOString()
+      }
+      setTweets([ newTweet , ...tweets]);
   };
-
-
-
   return (
     <div className="App">
       <CreateTweet maxChar={maxChar} disabled={!isValid} input={(e) => tweetInput(e)} submit={() => submitTweet()}  />
       <AllTweets list={tweets} />
-      {/* <Tweet username='bob' timeCreated='just now' 
-      content='Nisi dolore ad ex magna nostrud voluptate
-       enim nulla magna.' /> */}
     </div>
   );
 }
