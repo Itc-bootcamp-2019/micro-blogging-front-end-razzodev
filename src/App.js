@@ -1,30 +1,38 @@
-import React, { useState , useEffect } from 'react';
 import './App.css';
+import React, { useState , useEffect } from 'react';
+import { getTweets , postTweets } from './lib/api'
 import CreateTweet from './components/CreateTweet';
 import AllTweets from './components/AllTweets';
 
 function App(props) {
-  const inStorage = localStorage.getItem('tweets');
-  const [ tweets , setTweets ] = useState(
-    JSON.parse(inStorage) || []
-  );
+  
+  const [ loading , setLoading ] = useState(true);
+  const [ tweets , setTweets ] = useState([]);
   
   const submitTweet = (tweetContent) => {
       let newTweet = {
         content: tweetContent,
         date: new Date().toISOString(),
-        userName: 'raz',
+        userName: 'aba',
       }
-      setTweets([ newTweet , ...tweets]);
-  };
+      try{
+        postTweets(newTweet);
+        getTweets().then(data => setTweets(data))
+      } catch (error) {
+        alert(error);
+      }
+  }; 
 
   useEffect(() => {
-    localStorage.setItem('tweets', JSON.stringify(tweets)); 
-  },[tweets]);
+    setInterval(() => 
+    getTweets().then(data => setTweets(data)).then(() => setLoading(false))
+    , 5000)
+  },[]);
 
   return (
     <div className="App">
       <CreateTweet submit={(e) => submitTweet(e)} />
+      {loading && <h3>Loading...</h3>}
       <AllTweets list={tweets} />
     </div>
   );
