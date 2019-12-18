@@ -5,19 +5,12 @@ import Tweet from "./Tweet";
 
 function AllTweets(props) {
     const { list } = props;
-    
-    // const [ tweets , setNotTweets ] = useState([]);
-    // useEffect(() => {
-    //     setNotTweets([newTweet, ...tweets ])
-    // },[newTweet,tweets]);
-
     return (
-        <div /*style={{marginTop: '20px'}}*/>
-            Hello
+        <div>
             {list.map((tweet, index) => 
-                <Tweet key={tweet.timeCreated}
-                 username={tweet.username}
-                  timeCreated={tweet.timeCreated}
+                <Tweet key={tweet.date+tweet.userName}
+                 userName={tweet.userName}
+                  date={tweet.date}
                    content={tweet.content} />
                 )}
         </div>
