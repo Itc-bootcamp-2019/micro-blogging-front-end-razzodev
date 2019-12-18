@@ -9,9 +9,10 @@ function AllTweets(props) {
         <div>
             {list.map((tweet, index) => 
                 <Tweet key={tweet.date+tweet.userName}
-                 userName={tweet.userName}
-                  date={tweet.date}
-                   content={tweet.content} />
+                   content={tweet.content}
+                   date={tweet.date}
+                   userName={tweet.userName}
+                   />
                 )}
         </div>
     )
