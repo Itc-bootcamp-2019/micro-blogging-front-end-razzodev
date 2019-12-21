@@ -2,16 +2,13 @@ import React, { useState, useContext } from 'react';
 import { UserNameContext } from '../context'
 
 function Profile() {
-    const { name , setName } = useContext(UserNameContext);
-    const submitName = () => {
-        console.log(name);
-    }
+    const { userName , setUsername } = useContext(UserNameContext);
+
     return (
         <div>
-            <h3 style={{ color: '#FFFFFF' }}>{name}</h3>
+            <h3 style={{ color: '#FFFFFF' }}>Profile</h3>
                 <input placeholder='username' onChange={(e) =>
-                    setName(e.target.value)} />
-                <button onClick={() => submitName()}>Confirm</button>
+                    setUsername(e.target.value)} />
         </div>
     )
 }
