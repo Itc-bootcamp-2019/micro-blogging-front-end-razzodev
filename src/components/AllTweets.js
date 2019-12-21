@@ -8,7 +8,7 @@ function AllTweets(props) {
     return (
         <div>
             {list.map((tweet, index) => 
-                <Tweet key={tweet.date+tweet.userName}
+                <Tweet key={tweet.date+tweet.userName+Math.floor(Math.random * 100) + 1}
                    content={tweet.content}
                    date={tweet.date}
                    userName={tweet.userName}
