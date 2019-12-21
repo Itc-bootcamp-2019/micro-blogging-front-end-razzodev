@@ -16,6 +16,6 @@ align-items: center;
     text-decoration-line: none;
 
 }
-.nav-links:focus-within {
+.active-links {
     color: #FFFFFF;
 }
