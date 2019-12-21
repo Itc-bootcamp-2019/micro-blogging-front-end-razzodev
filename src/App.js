@@ -7,21 +7,18 @@ import Profile from './pages/Profile'
 import Navbar from './components/Navbar';
 
 function App(props) {
+  const [userName, setUsername] = useState('Guest');
   return (
     <div className="App">
-      <Router>
-        <Navbar/>
-        <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route exact path='/profile'>
-            <UserNameContext.Provider value={name}>
-            <Profile />
+            <UserNameContext.Provider value={{userName , setUsername }} >
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/profile' component={Profile} />
+          </Switch>
+        </Router>
             </UserNameContext.Provider>
-          </Route>
-        </Switch>
-      </Router>
     </div>
   )
 }
