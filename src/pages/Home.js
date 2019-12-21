@@ -7,23 +7,23 @@ import AllTweets from '../components/AllTweets';
 function Home() {
     const [loading, setLoading] = useState(true);
     const [tweets, setTweets] = useState([]);
-    const name = useContext(UserNameContext);
+    const userName = useContext(UserNameContext);
 
     useEffect(() => {
         setInterval(() =>
             getTweets().then(data => setTweets(data)).then(() => setLoading(false))
             , 5000);
         return () => {
-
         }
     }, []);
 
-
     const submitTweet = (tweetContent, name) => {
+        let nameConvert = JSON.stringify(name);
+        let nameSlice = nameConvert.slice(13,-2)
         let newTweet = {
             content: tweetContent,
             date: new Date().toISOString(),
-            userName: name,
+            userName: nameSlice,
         }
         try {
             postTweets(newTweet);
@@ -36,7 +36,7 @@ function Home() {
  
     return (
         <div>
-            <CreateTweet submit={(e) => submitTweet(e,name)} />
+            <CreateTweet submit={(e) => submitTweet(e,userName)} />
             {loading && <h3>Loading...</h3>}
             <AllTweets list={tweets} />
         </div>
