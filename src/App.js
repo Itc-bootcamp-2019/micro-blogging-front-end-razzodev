@@ -7,7 +7,6 @@ import Profile from './pages/Profile'
 import Navbar from './components/Navbar';
 
 function App(props) {
-  const [ name , setName ] = useState('Guest');
   return (
     <div className="App">
       <Router>
