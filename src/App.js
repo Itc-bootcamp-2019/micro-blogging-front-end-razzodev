@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 
 function App(props) {
   const [userName, setUsername] = useState('Guest');
+  
   return (
     <div className="App">
             <UserNameContext.Provider value={{userName , setUsername }} >
