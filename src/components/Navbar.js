@@ -11,8 +11,9 @@ function Navbar() {
             <NavLink exact activeClassName='active-links' className='nav-links' to='/'>Home</NavLink>
             <NavLink exact activeClassName='active-links' className='nav-links' to='/profile'>Profile</NavLink>
             <h5 style={{
-
-                paddingLeft: '40px',
+                position: 'relative',
+                alignItems:'flex-end',
+                marginRight: '40px',
                 color: '#FFFFFF',
                 fontWeight: '500'
                 }}>Hi, {userName}</h5>

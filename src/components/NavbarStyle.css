@@ -1,5 +1,5 @@
 #navbar {
-    width: 1076px;
+    width: 100%;
 height: 58px;
 background: #343A40;
 border-radius: 6px;
@@ -9,6 +9,7 @@ align-items: center;
 }
 
 .nav-links {
+    align-items: flex-start;
     margin-right: 45px;
     font-size: 14px;
     line-height: 16px;
