@@ -1,16 +1,18 @@
-import React, { useState, useContext } from 'react';
-import { UserNameContext } from '../context'
+import React, { useContext } from "react";
+import { UserNameContext } from "../context";
 
 function Profile() {
-    const { userName , setUsername } = useContext(UserNameContext);
+  const { setUsername } = useContext(UserNameContext);
 
-    return (
-        <div>
-            <h3 style={{ color: '#FFFFFF' }}>Profile</h3>
-                <input placeholder='username' onChange={(e) =>
-                    setUsername(e.target.value)} />
-        </div>
-    )
+  return (
+    <div>
+      <h3 style={{ color: "#FFFFFF" }}>Profile</h3>
+      <input
+        placeholder="username"
+        onChange={e => setUsername(e.target.value)}
+      />
+    </div>
+  );
 }
 
-export default Profile
+export default Profile;
