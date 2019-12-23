@@ -24,3 +24,5 @@ yarn-error.log*
 
 #API key
 tgApiKey.js
+firebaseApiKey.js
+firebaseConfig.js
