@@ -3,7 +3,6 @@ import "./CreateTweetStyle.css";
 
 function CreateTweet(props) {
   const { submit } = props;
-
   const [maxChar, setMaxChar] = useState(false); // limit tweet to 140 characters
   const maxCharCheck = () => {
     return tweetContent.length > 140 ? setMaxChar(true) : setMaxChar(false);
@@ -17,6 +16,7 @@ function CreateTweet(props) {
   };
 
   const [tweetContent, setTweetContent] = useState("");
+
   useEffect(() => {
     maxCharCheck();
     checkValid();
@@ -27,6 +27,7 @@ function CreateTweet(props) {
     <div className="create-tweet-wrapper">
       <textarea
         id="tweetInput"
+        value={tweetContent}
         placeholder="What you have in mind..."
         onChange={e => setTweetContent(e.target.value)}
       />
@@ -39,7 +40,10 @@ function CreateTweet(props) {
         <button
           id="tweetButton"
           disabled={!isValid}
-          onClick={() => submit(tweetContent)}
+          onClick={() => {
+            submit(tweetContent);
+            setTweetContent("");
+          }}
         >
           Tweet
         </button>
